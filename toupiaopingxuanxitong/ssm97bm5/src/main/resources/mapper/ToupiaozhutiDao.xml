@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ToupiaozhutiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ToupiaozhutiEntity" id="toupiaozhutiMap">
+        <result property="toupiaozhuti" column="toupiaozhuti"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ToupiaozhutiVO" >
+		SELECT * FROM toupiaozhuti  toupiaozhuti         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ToupiaozhutiVO" >
+		SELECT  toupiaozhuti.* FROM toupiaozhuti  toupiaozhuti
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ToupiaozhutiView" >
+
+		SELECT  toupiaozhuti.* FROM toupiaozhuti  toupiaozhuti 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ToupiaozhutiView" >
+		SELECT * FROM toupiaozhuti  toupiaozhuti <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>

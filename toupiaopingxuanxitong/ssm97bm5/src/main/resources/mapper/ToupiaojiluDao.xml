@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ToupiaojiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ToupiaojiluEntity" id="toupiaojiluMap">
+        <result property="biaoti" column="biaoti"/>
+        <result property="toupiaozhuti" column="toupiaozhuti"/>
+        <result property="tupian" column="tupian"/>
+        <result property="piaoshu" column="piaoshu"/>
+        <result property="toupiaoshijian" column="toupiaoshijian"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ToupiaojiluVO" >
+		SELECT * FROM toupiaojilu  toupiaojilu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ToupiaojiluVO" >
+		SELECT  toupiaojilu.* FROM toupiaojilu  toupiaojilu
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ToupiaojiluView" >
+
+		SELECT  toupiaojilu.* FROM toupiaojilu  toupiaojilu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ToupiaojiluView" >
+		SELECT * FROM toupiaojilu  toupiaojilu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
